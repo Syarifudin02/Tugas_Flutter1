@@ -18,8 +18,8 @@ class _DisenHalamanLoginState extends State<DisenHalamanLogin> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Silahakan Untuk Login Terlebihdahulu'),
-      ),
+        title: Text('Silahakan Untuk Login Terlebih Dahulu'),
+        backgroundColor: Colors.redAccent),
       body: Form(
         key: formkey,
         child: Center(
@@ -27,8 +27,8 @@ class _DisenHalamanLoginState extends State<DisenHalamanLogin> {
             width: 280, height: 250,
             child: Card(
               elevation: 10,
-              shadowColor: const Color.fromARGB(255, 11, 119, 11),
-              color:  Color.fromARGB(255, 11, 13, 11),
+              shadowColor: const Color.fromARGB(255, 22, 25, 22),
+              color:  Color.fromARGB(255, 131, 228, 220),
               child: Container(
                 padding: EdgeInsets.all(10),
                 child: Column(
@@ -76,17 +76,20 @@ class _DisenHalamanLoginState extends State<DisenHalamanLogin> {
                         if(formkey.currentState!.validate()){
                           if(controllerUser.text == tUser && controllerpass.text == tPass){
                         // perintah untuk memanggil halaman baru
-                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:
-                         (context) => DisenHalamandashboard(username: controllerUser.text),
-                         ), (Route<dynamic> route) => false,);
+                        Navigator.push( context, MaterialPageRoute(builder: 
+                        (context) => DisenHalamandashboard(username: controllerUser.text,)),);
 
+                      //  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:
+                       //  (context) => DisenHalamandashboard(username: controllerUser.text)),
+                       // (Route<dynamic> route) => false,);
+                        
                           }else{
                             showDialog(
                               context: context,
                                builder: (context){
                                 return AlertDialog(
                                   title: Text('Konfirmasi Login'),
-                                  content: Text('User Atau Passwoard Masih Salah'),
+                                  content: Text('User Atau Passwoard Salah'),
                                   actions: [
                                     ElevatedButton(
                                       onPressed: (){

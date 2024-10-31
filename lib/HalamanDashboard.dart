@@ -10,13 +10,22 @@ class DisenHalamandashboard extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Dashboard'),
-      ),
+        backgroundColor: Colors.blueGrey),
       body: Center(
-        child: Text(
+        child: SizedBox(
+          width: 450, 
+          height: 820,
+          child: Card(
+            color: Colors.blueAccent,
+        child:Center(
+          child: Text(
           'Selamat Datang, $username!',
           style: TextStyle(fontSize: 24),
         ),
+        ),
       ),
+    ),
+    ),
     );
   }
 }
